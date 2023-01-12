@@ -12,7 +12,7 @@ import java.util.Optional;
 
 import org.testng.annotations.*;
 
-public class ParallelReservationAvailableSeatTest {
+public class ParallelReservationAvailableSeatTest { //Reservation methods will be invoked concurrently from TestSuite, there are enough seats for all the reservations
 	
 	private Theater theater;
 	private Showing showing;
@@ -28,7 +28,7 @@ public class ParallelReservationAvailableSeatTest {
 	
 	@AfterClass
 	public void validate() {
-		assertEquals(reserveList.size(),3);
+		assertEquals(reserveList.size(),3); //Successful reservation for all 3 concurrent threads
 		assertEquals(showing.getAvailableTickets(),0);
 	}
 	

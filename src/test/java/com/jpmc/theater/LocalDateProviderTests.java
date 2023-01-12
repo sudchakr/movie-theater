@@ -18,7 +18,7 @@ public class LocalDateProviderTests {
     	LocalDateProvider instance1 = LocalDateProvider.singleton();
     	LocalDateProvider instance2 = LocalDateProvider.singleton();
     	
-    	assertSame(instance1,instance2);
+    	assertSame(instance1,instance2);//Only 1 instance created
     }
     
     @Test
@@ -36,7 +36,7 @@ public class LocalDateProviderTests {
             System.out.println(e.getMessage());
         }
         
-        assertNull(instance2);
+        assertNull(instance2);//Cannot create via reflection
     }
     
     @Test
@@ -49,6 +49,6 @@ public class LocalDateProviderTests {
             System.out.println(e.getMessage());
         }
         
-        assertNull(instance2);    	
+        assertNull(instance2);//Cannot clone    	
     }
 }

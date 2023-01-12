@@ -14,7 +14,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class ParallelReservationUnavailableSeatTest {
+public class ParallelReservationUnavailableSeatTest { //Reservation methods will be invoked concurrently from TestSuite, not enough seats for all the reservations
 	private Theater theater;
 	private Showing showing;
 	private List<Customer> reserveList;

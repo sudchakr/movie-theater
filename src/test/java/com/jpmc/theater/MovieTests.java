@@ -44,7 +44,7 @@ public class MovieTests {
     }
     
     @Test
-    void testSpecialMovieBiggerDiscount() {
+    void testSpecialMovieBiggerDiscount() { //Special Movie has a bigger discount than Sequence Discount
         Movie spiderMan = new Movie("1","Spider-Man: No Way Home", Duration.ofMinutes(90),12.5, 1);
         
         Theater theater = new Theater("Test Theater","1 Main Street","Pleasantville","NJ",100);
@@ -55,7 +55,7 @@ public class MovieTests {
     }
     
     @Test
-    void testSequenceBiggerDiscount() {
+    void testSequenceBiggerDiscount() { //Sequence discount is more than Special Movie Discount
         Movie spiderMan = new Movie("1","Spider-Man: No Way Home", Duration.ofMinutes(90),12.5, 1);
         
         Theater theater = new Theater("Test Theater","1 Main Street","Pleasantville","NJ",100);
@@ -71,15 +71,15 @@ public class MovieTests {
         
         Theater theater = new Theater("Test Theater","1 Main Street","Pleasantville","NJ",100);
         
-        Showing showing1 = new Showing(spiderMan, 3, LocalDateTime.of(LocalDate.of(2023,01,01), LocalTime.of(11,0)),theater);
+        Showing showing1 = new Showing(spiderMan, 3, LocalDateTime.of(LocalDate.of(2023,01,01), LocalTime.of(11,0)),theater); //11 AM
         
         assertEquals(7.5, spiderMan.calculateTicketPrice(showing1));
         
-        Showing showing2 = new Showing(spiderMan, 3, LocalDateTime.of(LocalDate.of(2023,01,01), LocalTime.of(14,0)),theater);
+        Showing showing2 = new Showing(spiderMan, 3, LocalDateTime.of(LocalDate.of(2023,01,01), LocalTime.of(14,0)),theater); //2 PM
         
         assertEquals(7.5, spiderMan.calculateTicketPrice(showing2));
         
-        Showing showing3 = new Showing(spiderMan, 3, LocalDateTime.of(LocalDate.of(2023,01,01), LocalTime.of(16,0)),theater);
+        Showing showing3 = new Showing(spiderMan, 3, LocalDateTime.of(LocalDate.of(2023,01,01), LocalTime.of(16,0)),theater); //4 PM
         
         assertEquals(7.5, spiderMan.calculateTicketPrice(showing3));
     }
@@ -90,14 +90,14 @@ public class MovieTests {
         
         Theater theater = new Theater("Test Theater","1 Main Street","Pleasantville","NJ",100);
         
-        Showing showing = new Showing(spiderMan, 3, LocalDateTime.of(LocalDate.of(2023,01,07), LocalTime.of(17,0)),theater);
+        Showing showing = new Showing(spiderMan, 3, LocalDateTime.of(LocalDate.of(2023,01,07), LocalTime.of(17,0)),theater); //7th of the month
         
         assertEquals(9.0, spiderMan.calculateTicketPrice(showing));        
         
     }
     
     @Test
-    void testBiggestDiscount() {
+    void testBiggestDiscount() { //Biggest of all possible discounts
         Movie spiderMan = new Movie("1","Spider-Man: No Way Home", Duration.ofMinutes(90),10.0, 1);
         
         Theater theater = new Theater("Test Theater","1 Main Street","Pleasantville","NJ",100);
@@ -109,7 +109,7 @@ public class MovieTests {
     }
     
     @Test
-    void testNoDiscount() {
+    void testNoDiscount() { //No Discount applicable
         Movie spiderMan = new Movie("1","Spider-Man: No Way Home", Duration.ofMinutes(90),10.0, 0);
         
         Theater theater = new Theater("Test Theater","1 Main Street","Pleasantville","NJ",100);

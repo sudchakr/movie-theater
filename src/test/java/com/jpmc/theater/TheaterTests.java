@@ -268,4 +268,12 @@ public class TheaterTests {
         
     	theater.printJSONSchedule(LocalDate.now().plusDays(1));
     }
+    
+    @Test
+    void testPrintJSONEmptyMovieSchedule() {
+    	Theater theater = new Theater("Test Theater","1 Main Street","Pleasantville","NJ",100);    	
+        
+    	theater.printJSONSchedule();//No Showing was added for current date
+    	theater.printJSONSchedule(LocalDate.now().plusDays(1)); //No Showing was added for next date
+    }
 }
