@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Parallel Reservation Test Suite" parallel="methods">
+    <test name="ParallelReservationAvailableSeat" thread-count="3">
+        <classes>
+            <class name="com.jpmc.theater.ParallelReservationAvailableSeatTest" />
+        </classes>
+    </test>
+    <test name="ParallelReservationUnavailableSeat" thread-count="3">
+        <classes>
+            <class name="com.jpmc.theater.ParallelReservationUnavailableSeatTest" />
+        </classes>
+    </test>
+</suite>
